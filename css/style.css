@@ -1,0 +1,266 @@
+:root {
+    --mainColor: #180a00;
+    --subColor: #555;
+    --sideSpace: 0.5rem;
+    --maxWidth: 1080px;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    scrollbar-width: none;
+    /* Firefox 対応 */
+}
+
+@font-face {
+    font-family: 'Current';
+    src: url('../font/Current-Regular.otf') format('opentype');
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+}
+
+main a:hover {
+    opacity: 0.6;
+    filter: brightness(105%);
+}
+
+/* メニュー部 */
+menu {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f5e8be;
+    padding: 5rem var(--sideSpace);
+    text-align: center;
+    overflow-y: scroll;
+    visibility: hidden;
+    -ms-overflow-style: none;
+    /* IE, Edge 対応 */
+    scrollbar-width: none;
+    /* Firefox 対応 */
+}
+
+menu::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari 対応 */
+}
+
+menu>div {
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+menu>div>#menuicon {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+menu>div>#menuicon>img {
+    width: 100%;
+}
+
+
+menu.is-open {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ヘッダー */
+header {
+    width: 100%;
+    position: fixed;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    height: 50px;
+    background-color: #ffffff;
+    top: 0;
+    z-index: 999;
+}
+
+header>a {
+    display: block;
+}
+
+header svg {
+    height: 100%;
+}
+
+header use {
+    fill: var(--mainColor);
+}
+
+header.is-open {
+    visibility: hidden;
+}
+
+.title {
+    margin: 0 5px;
+    width: calc(100vw - 110px);
+    max-width: 484px;
+}
+
+.space {
+    width: 40px;
+    flex-shrink: 0;
+}
+
+.menu-btn {
+    position: relative;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+}
+
+.menu-btn span {
+    display: block;
+    height: 4px;
+    width: 28px;
+    border-radius: 3px;
+    background-color: #000;
+    position: absolute;
+    transition: all .4s;
+}
+
+.menu-btn span:first-child {
+    bottom: 8px;
+}
+
+.menu-btn span:last-child {
+    top: 8px;
+}
+
+#menu-btn-check:checked~.menu-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-btn-check:checked~.menu-btn span:first-child {
+    bottom: 18px;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check:checked~.menu-btn span:last-child {
+    top: 18px;
+    transform: rotate(45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+
+#navi li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#navi li a {
+    display: block;
+    text-decoration: none;
+    color: var(--mainColor);
+}
+
+#navi li a:first-child {
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Current';
+}
+
+#navi li a:last-child {
+    font-weight: 500;
+}
+
+/* コンテンツ */
+main {
+    margin-top: 50px;
+}
+
+section {
+    width: 100%;
+    padding: 5rem var(--sideSpace);
+}
+
+section>h2 {
+    font: 2.5rem 'Current';
+    color: var(--mainColor);
+    text-align: center;
+}
+
+section>p {
+    font-size: 1rem;
+    color: var(--subColor);
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+section>div {
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+}
+
+
+/* フッター */
+footer {
+    background: #f8f4e7;
+    padding: 2rem var(--sideSpace);
+    text-align: center;
+    color: var(--subColor);
+    width: 100%;
+}
+
+.sns {
+    text-align: center;
+    padding: 2rem var(--sideSpace);
+}
+
+.sns li {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.5rem;
+    padding: 0 0.75rem;
+}
+
+.sns img {
+    height: 100%;
+}
+
+a.more {
+    display: block;
+    width: 12rem;
+    margin: 0 auto;
+    margin-top: 2.8rem;
+    padding: 0.8rem 0rem;
+    border: solid 1px var(--mainColor);
+    color: var(--mainColor);
+    text-decoration: none;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+
+    /* 600pxまでの幅の場合に適応される */
+    header.is-scroll .space {
+        display: none;
+    }
+}
