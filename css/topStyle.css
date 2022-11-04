@@ -46,7 +46,6 @@ header.is-scroll .menu-btn span {
 }
 
 .slide {
-  height: 100vh;
   background-image: url(../img/topbg.jpg);
   background-size: cover;
   background-position: 50% 46.5%;

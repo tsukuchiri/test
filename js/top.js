@@ -1,6 +1,8 @@
 // トップページに関してのスクリプトを置いておきます
 
 $(function () {
+    // slideの高さを定義
+    $('.slide').css('height',$(window).height());
     // ヘッダーの色を途中で変えたい
     $(window).on('scroll', function () {
         if ($(window).height() - 25 < jQuery(this).scrollTop()) {
