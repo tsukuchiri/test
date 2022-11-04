@@ -39,7 +39,7 @@ function getLevel(n) {
 
 $(function () {
   // ハンバーガーメニューに内容を入れる
-  $('#menuicon').append(`<img src="${getLevel(dirCount)}img/menuicon.svg" alt="TSUKUCHIRI" class="root">`);
+  $('#menuicon').append(`<img src="${getLevel(dirCount)}img/menuicon.svg?ss" alt="TSUKUCHIRI" class="root">`);
   $('#menuicon').attr("href", getLevel(dirCount));
   navis = getCsv(getLevel(dirCount)+"csv/menu.csv");
   navis.shift()
