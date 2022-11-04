@@ -2,7 +2,15 @@
 
 $(function () {
     // slideの高さを定義
-    $('.slide').css('height',$(window).height());
+    $(document).ready(function () {
+        var hSize = $(window).height();
+        $('.slide').height(hSize); // アドレスバーを除いたサイズを付与
+    });
+
+    $(window).resize(function () { // ページをリサイズした時の処理
+        var hSize = $(window).height();
+        $('.slide').height(hSize); // アドレスバーを除いたサイズを付与
+    });
     // ヘッダーの色を途中で変えたい
     $(window).on('scroll', function () {
         if ($(window).height() - 25 < jQuery(this).scrollTop()) {
@@ -18,9 +26,9 @@ $(function () {
         const update = updates[i];
         const date = update[0].split('/');
         if (update[2] == '') {
-            $('#newsTbody').append(`<tr><td>${date[0]}/${('0'+date[1]).slice(-2)}/${('0'+date[2]).slice(-2)}</td><td>${update[1]}</td></tr>`);
-        }else{
-            $('#newsTbody').append(`<tr><td>${date[0]}/${('0'+date[1]).slice(-2)}/${('0'+date[2]).slice(-2)}</td><td><a href="${update[2]}">${update[1]}</a></td></tr>`);
+            $('#newsTbody').append(`<tr><td>${date[0]}/${('0' + date[1]).slice(-2)}/${('0' + date[2]).slice(-2)}</td><td>${update[1]}</td></tr>`);
+        } else {
+            $('#newsTbody').append(`<tr><td>${date[0]}/${('0' + date[1]).slice(-2)}/${('0' + date[2]).slice(-2)}</td><td><a href="${update[2]}">${update[1]}</a></td></tr>`);
         }
         // 5個まで
         if (i >= 4) {
