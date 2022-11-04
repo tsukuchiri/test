@@ -1,7 +1,7 @@
 :root {
     --mainColor: #180a00;
     --subColor: #555;
-    --sideSpace: 0.5rem;
+    --sideSpace: 0.7rem;
     --maxWidth: 1080px;
 }
 
@@ -79,74 +79,6 @@ menu.is-open {
     opacity: 1;
 }
 
-/* 中身 */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.gallery a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    width: calc(calc(100% - 2rem) / 3);
-}
-
-
-
-#pickup>.gallery a {
-    width: calc(calc(100% - 3rem) / 4);
-}
-
-
-.gallery img {
-    width: 100%;
-    background-color: #eaeaea;
-}
-
-/* ここから横幅によるやつ */
-@media screen and (max-width: 980px) {
-
-    /* 980pxまでの幅の場合に適応される */
-    .gallery a {
-        width: calc(calc(100% - 1rem) / 2);
-    }
-
-    #pickup .gallery a:last-child {
-        display: none;
-    }
-
-    #pickup .gallery a {
-        width: calc(calc(100% - 2rem) / 3);
-    }
-}
-
-@media screen and (max-width: 680px) {
-
-    /* 680pxまでの幅の場合に適応される */
-    .gallery a {
-        width: calc(calc(100% - 1rem) / 2);
-    }
-
-    #pickup .gallery a:last-child {
-        display: inline;
-    }
-
-}
-
-@media screen and (max-width: 600px) {
-
-    /* 600pxまでの幅の場合に適応される */
-    .gallery a {
-        width: 100%;
-    }
-
-    .gallery a:nth-last-child(-n+3) {
-        display: none;
-    }
-}
 
 /* ヘッダー */
 header {
@@ -301,6 +233,13 @@ main {
     margin-top: 50px;
 }
 
+main a{
+    text-decoration-line: none;
+    font-weight: bolder;
+    color:#c0a14f;
+    word-wrap: break-word;
+  }  
+
 section {
     width: 100%;
     padding: 5rem var(--sideSpace);
@@ -334,16 +273,51 @@ section>div p {
     text-indent: 1rem;
 }
 
+section>div img {
+    width: 100%;
+    max-width: 50rem;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+section>div img+p {
+    font-size: 1rem;
+    color: var(--subColor);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+section>h3 {
+    font: 2.5rem 'Kiwi Maru';
+    color: var(--mainColor);
+    text-align: center;
+}
+section>h3+p {
+    font-size: 1rem;
+    color: var(--subColor);
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+
 section h4 {
-    font-size: 1.2rem;
-    margin: 0.1rem 0;
+    font-size: 1.3rem;
+    font-family: 'Kiwi Maru';
+    margin: 0.5rem 0;
 }
 
 section h5 {
-    margin: 0.1rem 0;
+    font-size: 1.1rem;
+    margin: 0.2rem 0;
+    font-family: 'Kiwi Maru';
 }
 
+
 /* コンテンツ内の各種パーツ */
+
 .qa {
     padding: 0.5rem 0;
 }
@@ -372,6 +346,75 @@ section h5 {
     background-image: url(../img/answer.svg);
 }
 
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.gallery a {
+    text-decoration: none;
+    font-family: 'Kiwi Maru';
+    color: #000;
+    width: calc(calc(100% - 2rem) / 3);
+}
+
+
+
+#pickup>.gallery a {
+    width: calc(calc(100% - 3rem) / 4);
+}
+
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #eaeaea;
+    object-fit: cover;
+}
+
+/* ここから横幅によるやつ */
+@media screen and (max-width: 980px) {
+
+    /* 980pxまでの幅の場合に適応される */
+    .gallery a {
+        width: calc(calc(100% - 1rem) / 2);
+    }
+
+    #pickup .gallery a:last-child {
+        display: none;
+    }
+
+    #pickup .gallery a {
+        width: calc(calc(100% - 2rem) / 3);
+    }
+}
+
+@media screen and (max-width: 680px) {
+
+    /* 680pxまでの幅の場合に適応される */
+    .gallery a {
+        width: calc(calc(100% - 1rem) / 2);
+    }
+
+    #pickup .gallery a:last-child {
+        display: inline;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    /* 600pxまでの幅の場合に適応される */
+    .gallery a {
+        width: 100%;
+    }
+
+    /* .gallery a:nth-last-child(-n+3) {
+        display: none;
+    } */
+}
 
 
 /* フッター */
@@ -414,7 +457,7 @@ a.more {
 @media screen and (max-width: 600px) {
 
     /* 600pxまでの幅の場合に適応される */
-    header.is-scroll .space {
+    header .space {
         display: none;
     }
 }

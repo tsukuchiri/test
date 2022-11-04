@@ -83,6 +83,7 @@ main {
   text-align: center;
   line-height: 2.5;
 }
+
 #about>div>p {
   text-indent: 0;
 }
@@ -98,3 +99,14 @@ main {
   padding: 0 1.3rem;
 }
 
+@media screen and (max-width: 600px) {
+
+  /* 600pxまでの幅の場合に適応される */
+  header .space {
+    display: inline;
+  }
+
+  header.is-scroll .space {
+    display: none;
+  }
+}

@@ -60,4 +60,14 @@ $(function () {
       $(this).append(`<li><a href="${service[2]}" target="_blank"><img src="${getLevel(dirCount)}img/sns/${service[1]}" alt="${service[0]}"></a></li>`);
     });
   });
+
+  // 特集記事一覧に内容を突っ込む
+  features = getCsv(getLevel(dirCount)+"csv/features.csv");
+  features.shift();
+  $('.gallery.features').each(function(){
+    for (let i = 0; i < 3; i++) {
+      const feature = features[i];
+      $(this).append(`<a href="${getLevel(dirCount)}features/${feature[2]}"><img src="${getLevel(dirCount)}${feature[3] != "" ? "features/"+feature[3] : "img/thumbnail/169.svg"}" alt="">${feature[1]}</a>`);
+    }
+  });
 });
