@@ -41,7 +41,7 @@ header.is-scroll .menu-btn span {
 #top {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #fff;
 }
 

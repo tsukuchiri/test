@@ -233,12 +233,12 @@ main {
     margin-top: 50px;
 }
 
-main a{
+main a {
     text-decoration-line: none;
     font-weight: bolder;
-    color:#c0a14f;
+    color: #c0a14f;
     word-wrap: break-word;
-  }  
+}
 
 section {
     width: 100%;
@@ -294,6 +294,7 @@ section>h3 {
     color: var(--mainColor);
     text-align: center;
 }
+
 section>h3+p {
     font-size: 1rem;
     color: var(--subColor);
@@ -441,6 +442,34 @@ footer {
 .sns img {
     height: 100%;
 }
+
+
+.modal_pop {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.bg {
+    background-color: #1119;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.modal_pop img {
+    width: 80%;
+    max-width: calc(var(--maxWidth) * 0.8);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8f4e7;
+}
+
 
 a.more {
     display: block;
