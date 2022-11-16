@@ -43,11 +43,13 @@ $(function () {
     var hSize = $(window).height();
     console.log(hSize);
     $('html').height(hSize); // アドレスバーを除いたサイズを付与
+    $('.modal_pop').outerHeight(hSize); // アドレスバーを除いたサイズを付与
   });
 
   $(window).resize(function () { // ページをリサイズした時の処理
     var hSize = $(window).height();
     $('html').height(hSize); // アドレスバーを除いたサイズを付与
+    $('.modal_pop').outerHeight(hSize); // アドレスバーを除いたサイズを付与
   });
   // ハンバーガーメニューに内容を入れる
   $('#menuicon').append(`<img src="${getLevel(dirCount)}img/menuicon.svg?ss" alt="TSUKUCHIRI" class="root">`);
