@@ -4,7 +4,7 @@ $(function () {
     // slideの高さを定義
     $(document).ready(function () {
         var hSize = $(window).height();
-        $('.#top').height(hSize); // アドレスバーを除いたサイズを付与
+        $('#top').height(hSize); // アドレスバーを除いたサイズを付与
     });
 
     $(window).resize(function () { // ページをリサイズした時の処理
